@@ -1,0 +1,6 @@
+C:\Users\Usuario\Desktop\universidad\Metodologias1\proyecto\proyectoMetodologiasProgramacion1\bin\Debug\proyectoMetodologiasProgramacion1.exe.config
+C:\Users\Usuario\Desktop\universidad\Metodologias1\proyecto\proyectoMetodologiasProgramacion1\bin\Debug\proyectoMetodologiasProgramacion1.exe
+C:\Users\Usuario\Desktop\universidad\Metodologias1\proyecto\proyectoMetodologiasProgramacion1\bin\Debug\proyectoMetodologiasProgramacion1.pdb
+C:\Users\Usuario\Desktop\universidad\Metodologias1\proyecto\proyectoMetodologiasProgramacion1\obj\Debug\proyectoMetodologiasProgramacion1.exe
+C:\Users\Usuario\Desktop\universidad\Metodologias1\proyecto\proyectoMetodologiasProgramacion1\obj\Debug\proyectoMetodologiasProgramacion1.pdb
+C:\Users\Usuario\Desktop\universidad\Metodologias1\proyecto\proyectoMetodologiasProgramacion1\obj\Debug\proyectoMetodologiasProgramacion1.csprojResolveAssemblyReference.cache

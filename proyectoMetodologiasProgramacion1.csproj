@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{24CD9BEE-3370-49D4-98EF-D8C571D3EB91}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>proyectoMetodologiasProgramacion1</RootNamespace>
+    <AssemblyName>proyectoMetodologiasProgramacion1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\FactoryMethod\Colecciones\FabricaColeccionMultiple.cs" />
+    <Compile Include="Classes\FactoryMethod\Colecciones\FabricaConjunto.cs" />
+    <Compile Include="Classes\FactoryMethod\Colecciones\FabricaDiccionario.cs" />
+    <Compile Include="Classes\FactoryMethod\Colecciones\FabricaPila.cs" />
+    <Compile Include="Classes\FactoryMethod\Colecciones\FabricasCola.cs" />
+    <Compile Include="Classes\FactoryMethod\Colecciones\FactoryMethodIColeccionable.cs" />
+    <Compile Include="Classes\FactoryMethod\Comparables\FabricaAlumno.cs" />
+    <Compile Include="Classes\FactoryMethod\Comparables\FabricaNumeros.cs" />
+    <Compile Include="Classes\Alumno.cs" />
+    <Compile Include="Classes\ClaveValor.cs" />
+    <Compile Include="Classes\Colecciones\Cola.cs" />
+    <Compile Include="Classes\Colecciones\ColeccionMultiple.cs" />
+    <Compile Include="Classes\Colecciones\Conjunto.cs" />
+    <Compile Include="Classes\Colecciones\Diccionario.cs" />
+    <Compile Include="Classes\Colecciones\IteradorDiccionario.cs" />
+    <Compile Include="Classes\Colecciones\IteradorGeneral.cs" />
+    <Compile Include="Classes\Colecciones\Pila.cs" />
+    <Compile Include="Classes\Comparadores\CompararPorDni.cs" />
+    <Compile Include="Classes\Comparadores\CompararPorLegajo.cs" />
+    <Compile Include="Classes\Comparadores\CompararPorNombre.cs" />
+    <Compile Include="Classes\Comparadores\CompararPorPromedio.cs" />
+    <Compile Include="Classes\FactoryMethod\Comparables\FabricaVendedor.cs" />
+    <Compile Include="Classes\FactoryMethod\Comparables\FactoryMethodIComparable.cs" />
+    <Compile Include="Classes\GenerarDatosAleatorio.cs" />
+    <Compile Include="Classes\Gerente.cs" />
+    <Compile Include="Classes\LectordeDatos.cs" />
+    <Compile Include="Classes\Numero.cs" />
+    <Compile Include="Classes\Persona.cs" />
+    <Compile Include="Classes\Vendedor.cs" />
+    <Compile Include="Interface\Estrategia.cs" />
+    <Compile Include="Interface\IColeccionable.cs" />
+    <Compile Include="Interface\IComparable.cs" />
+    <Compile Include="Interface\IDiccionario.cs" />
+    <Compile Include="Interface\IFabriecadeComparables.cs" />
+    <Compile Include="Interface\IList.cs" />
+    <Compile Include="Interface\Iterable.cs" />
+    <Compile Include="Interface\Iterador.cs" />
+    <Compile Include="Interface\Observable.cs" />
+    <Compile Include="Interface\Observador.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes" />
+    <Folder Include="Classes\Colecciones" />
+    <Folder Include="Classes\Comparadores" />
+    <Folder Include="Classes\FactoryMethod" />
+    <Folder Include="Classes\FactoryMethod\Colecciones" />
+    <Folder Include="Classes\FactoryMethod\Comparables" />
+    <Folder Include="Interface" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
