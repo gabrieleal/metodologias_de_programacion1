@@ -8,15 +8,12 @@
  */
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Globalization;
 using System.Threading;
-using Microsoft.SqlServer.Server;
-using proyectoMetodologiasProgramacion1.Classes;
-using proyectoMetodologiasProgramacion1.Entity;
 
+using proyectoMetodologiasProgramacion1;
+using proyectoMetodologiasProgramacion1.Entity;
+using proyectoMetodologiasProgramacion1.Interface;
+using proyectoMetodologiasProgramacion1.Classes;
 namespace proyectoMetodologiasProgramacion1
 {
 	class Program
@@ -26,15 +23,15 @@ namespace proyectoMetodologiasProgramacion1
 //			Pila p = new Pila();
 //			llenar(p,IComparableDeseado.Vendedor);
 //			informar(p);
-//		
-//			
-//			
+//
+//
+//
 //			probarStrategy();
 //			probarIteradorDicc();
 			
 			Ejercicio4_Practica4();
 
-				
+			
 			
 			Console.ReadKey(true);
 		}
@@ -44,20 +41,23 @@ namespace proyectoMetodologiasProgramacion1
 			GenerarDatosAleatorio datos = new GenerarDatosAleatorio();
 			Random rand = new Random();
 			try{
-			for(int i = 0; i<20; i++){
-				if(i<10){
-					Alumno alumno = (Alumno)FactoryMethodIComparable.fabricaIComparable(IComparableDeseado.Alumno);
-					AdapterStudent student = new AdapterStudent(alumno);
-					prof.goToClass(student);
-				}else{
-					AdapterStudent student = new AdapterStudent(new AlumnoMuyEstudioso(datos.stringAleatorio(rand.Next(2,10)),datos.numeroAleatorio(rand.Next(9,11)),datos.numeroAleatorio(rand.Next(4,6)),Convert.ToDouble(datos.numeroAleatorio(rand.Next(1,10)))));
-					prof.goToClass(student);
+				for(int i = 0; i<20; i++){
+					if(i<10){
+						IAlumno alumno = new ProxyAlumno(datos.stringAleatorio(rand.Next(2,10)),datos.numeroAleatorio(rand.Next(9,11)),datos.numeroAleatorio(rand.Next(4,6)),datos.numeroAleatorio(rand.Next(1,10)),IComparableDeseado.Alumno);
+						AdapterStudent student = new AdapterStudent(alumno);
+						prof.goToClass(student);
+					}else{
+						//AdapterStudent student = new AdapterStudent(new AlumnoMuyEstudioso(datos.stringAleatorio(rand.Next(2,10)),datos.numeroAleatorio(rand.Next(9,11)),datos.numeroAleatorio(rand.Next(4,6)),Convert.ToDouble(datos.numeroAleatorio(rand.Next(1,10)))));
+						IAlumno alumno = new ProxyAlumno(datos.stringAleatorio(rand.Next(2,10)),datos.numeroAleatorio(rand.Next(9,11)),datos.numeroAleatorio(rand.Next(4,6)),datos.numeroAleatorio(rand.Next(1,10)),IComparableDeseado.AlumnoMuyEstudioso);
+						AdapterStudent student = new AdapterStudent(alumno);
+						
+						prof.goToClass(student);
+					}
 				}
-			}
-			
-			prof.teachingAClass();
+				
+				prof.teachingAClass();
 			}catch(Exception e)
-			{	
+			{
 				Console.WriteLine(e.Data);
 				Console.WriteLine(e.Message+"\n"+e.Source+"\n"+e.StackTrace);
 			}

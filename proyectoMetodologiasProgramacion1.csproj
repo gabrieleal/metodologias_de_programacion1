@@ -61,6 +61,7 @@
     <Compile Include="Classes\FactoryMethod\Colecciones\FabricasCola.cs" />
     <Compile Include="Classes\FactoryMethod\Colecciones\FactoryMethodIColeccionable.cs" />
     <Compile Include="Classes\FactoryMethod\Comparables\FabricaAlumno.cs" />
+    <Compile Include="Classes\FactoryMethod\Comparables\FabricaAlumnoMuyEstudioso.cs" />
     <Compile Include="Classes\FactoryMethod\Comparables\FabricaNumeros.cs" />
     <Compile Include="Classes\Alumno.cs" />
     <Compile Include="Classes\ClaveValor.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Classes\DecoratorLegajo.cs" />
     <Compile Include="Classes\Numero.cs" />
     <Compile Include="Classes\Persona.cs" />
+    <Compile Include="Classes\ProxyAlumno.cs" />
     <Compile Include="Classes\teacher.cs" />
     <Compile Include="Classes\Vendedor.cs" />
     <Compile Include="Interface\Estrategia.cs" />

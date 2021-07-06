@@ -22,7 +22,8 @@ namespace proyectoMetodologiasProgramacion1.Interface
 		int responderPregunta(int pregunta);
 		double Calificacion();
 		void Calificacion(double value);
-		
+		string getNombre();
+		int getDni();
 		
 	}
 }
