@@ -15,7 +15,10 @@ namespace proyectoMetodologiasProgramacion1.Classes
 	/// Description of OrdenAulaLLena.
 	/// </summary>
 	public class OrdenAulaLLena:IOrdenEnAula1
-	{
+	{	
+		Teacher t;
+
+		
 		public OrdenAulaLLena()
 		{
 		}
@@ -24,9 +27,18 @@ namespace proyectoMetodologiasProgramacion1.Classes
 
 		public void ejecutar()
 		{
-			throw new NotImplementedException();
+			this.t.teachingAClass();
 		}
 
 		#endregion
+		public Teacher T {
+			get {
+				return t;
+			}
+			set {
+				t = value;
+			}
+		}
+		
 	}
 }

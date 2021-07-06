@@ -15,7 +15,9 @@ namespace proyectoMetodologiasProgramacion1.Classes
 	/// Description of OrdenLlegaAlumno.
 	/// </summary>
 	public class OrdenLlegaAlumno:IOrdenEnAula2
-	{
+	{	
+		Teacher t;
+		
 		public OrdenLlegaAlumno()
 		{
 		}
@@ -24,9 +26,18 @@ namespace proyectoMetodologiasProgramacion1.Classes
 
 		public void ejecutar(IComparable c)
 		{
-			throw new NotImplementedException();
+			this.t.goToClass(new AdapterStudent(((IAlumno)c)));
 		}
 
 		#endregion
+
+		public Teacher T {
+			get {
+				return t;
+			}
+			set {
+				t = value;
+			}
+		}
 	}
 }

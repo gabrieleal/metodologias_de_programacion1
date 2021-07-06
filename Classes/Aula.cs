@@ -7,6 +7,7 @@
  * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
  */
 using System;
+using System.Collections.Generic;
 using proyectoMetodologiasProgramacion1.Interface;
 
 namespace proyectoMetodologiasProgramacion1.Classes
@@ -17,22 +18,52 @@ namespace proyectoMetodologiasProgramacion1.Classes
 	public class Aula
 	{	
 		Teacher t;
+		IOrdenEnAula1 push;
+		IOrdenEnAula1 com;
+		List<IOrdenEnAula2> pop;
 		public Aula()
 		{
 		}
 		
 		public void comenzar(){
 			Console.WriteLine("Cominzan las clases");
-			this.t=new Teacher();
+			if(push!=null){
+				push.ejecutar();
+			}
 		}
 		
 		public void nuevoAlumno(IAlumno a){
-			this.t.goToClass(new AdapterStudent(a));
+			foreach(var i in pop){
+				i.ejecutar(a);
+			}
 		}
 		
 		public void claseLista(){
-			this.t.teachingAClass();
+			if(com!=null){
+				com.ejecutar();
+			}
 		}
 		
+		public void addPush(IOrdenEnAula1 o){
+			push=(o);
+			((OrdenInicio)push).T=this.t;
+		}
+		public void addCom(IOrdenEnAula1 o){
+			Com=(o);
+			((OrdenLlegaAlumno)Com).T=this.t;
+		}
+		public void addPop(IOrdenEnAula2 o){
+			((OrdenLlegaAlumno)o).T=this.t;	
+			pop.Add(o);
+		}
+		
+		public IOrdenEnAula1 Com {
+			get {
+				return com;
+			}
+			set {
+				com = value;
+			}
+		}
 	}
 }
