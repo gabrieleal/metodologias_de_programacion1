@@ -19,9 +19,9 @@ namespace proyectoMetodologiasProgramacion1
 	/// </summary>
 	public class AdapterStudent : Student
 	{
-		Alumno Alumno;
+		IAlumno Alumno;
 		
-		public AdapterStudent(Alumno a)
+		public AdapterStudent(IAlumno a)
 		{
 			this.Alumno = a;
 		}
@@ -61,7 +61,7 @@ namespace proyectoMetodologiasProgramacion1
 		}
 		#endregion
 		
-		public Alumno getAlumno(){
+		public IAlumno getAlumno(){
 			return this.Alumno;
 		}
 	}

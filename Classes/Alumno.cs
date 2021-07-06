@@ -18,7 +18,7 @@ namespace proyectoMetodologiasProgramacion1
 	
 	public enum estrategia{Nombre,Legajo,Promedio,Dni};
 	
-	public class Alumno:Persona,ICalificacionDecorator
+	public class Alumno:Persona,ICalificacionDecorator,IAlumno
 	{
 		
 		private int Legajo;

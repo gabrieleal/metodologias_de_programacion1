@@ -14,13 +14,13 @@ namespace proyectoMetodologiasProgramacion1
 	/// <summary>
 	/// Description of AlumnoMuyEstudioso.
 	/// </summary>
-	public class AlumnoMuyEstudioso : Alumno
+	public class AlumnoMuyEstudioso : Alumno,IAlumno
 	{
 		public AlumnoMuyEstudioso(string nombre, int dni, int legajo,double prom) :base(nombre,dni,legajo,prom,new CompararPorDni())
 		{
 		}
 		
-		new public int responderPregunta(int pregunta){
+		public override int responderPregunta(int pregunta){
 			return pregunta%3;
 		} 
 	}

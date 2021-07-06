@@ -7,6 +7,7 @@
  * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
  */
 using System;
+using proyectoMetodologiasProgramacion1.Interface;
 
 namespace proyectoMetodologiasProgramacion1
 {
@@ -21,21 +22,21 @@ namespace proyectoMetodologiasProgramacion1
 		
 		public bool sosMenor(IComparable self, IComparable other)
 		{
-			if(((Alumno)self).getPromedio()<((Alumno)other).getPromedio()){
+			if(((IAlumno)self).getPromedio()<((IAlumno)other).getPromedio()){
 				return true;
 			}
 			return false;
 		}
 		public bool sosMayor(IComparable self, IComparable other)
 		{
-			if(((Alumno)self).getPromedio()>((Alumno)other).getPromedio()){
+			if(((IAlumno)self).getPromedio()>((IAlumno)other).getPromedio()){
 				return true;
 			}
 			return false;
 		}
 		public bool sosIgual(IComparable self, IComparable other)
 		{
-			if(((Alumno)self).getPromedio().Equals(((Alumno)other).getPromedio())){
+			if(((IAlumno)self).getPromedio().Equals(((IAlumno)other).getPromedio())){
 				return true;
 			}
 			return false;

@@ -86,6 +86,7 @@
     <Compile Include="Classes\teacher.cs" />
     <Compile Include="Classes\Vendedor.cs" />
     <Compile Include="Interface\Estrategia.cs" />
+    <Compile Include="Interface\IAlumno.cs" />
     <Compile Include="Interface\ICalificacionDecorator.cs" />
     <Compile Include="Interface\IColeccionable.cs" />
     <Compile Include="Interface\IComparable.cs" />
