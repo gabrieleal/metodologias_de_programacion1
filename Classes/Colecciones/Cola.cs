@@ -49,6 +49,7 @@ namespace proyectoMetodologiasProgramacion1
 			return e;
 		}
 		
+		
 		#region IColeccionable implementation
 
 		public int Cuantos()

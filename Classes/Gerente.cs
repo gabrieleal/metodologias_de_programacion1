@@ -23,18 +23,18 @@ namespace proyectoMetodologiasProgramacion1
 		}
 		
 		public void cerrar(){
-			int i = 0;
-			while(!((Pila)mejores).isEmpty()){
-				Vendedor p =(Vendedor) ((Pila)mejores).getConjunto()[i];
-				Console.WriteLine(String.Format("el empleado {0} con un bonus acumulado de {1} ",p.getNombre(),p.Bonus));
-				i++;
+			iterador iter = mejores.crearIterador();
+			while(!iter.Fin()){
+				Vendedor actual = (Vendedor)iter.Actual();
+				Console.WriteLine(String.Format("el empleado {0} con un bonus acumulado de {1} ",actual.getNombre(),actual.Bonus));
+				iter.Siguiente();
 			}
 		}
 		
 		public void venta(double monto, Vendedor vendedor){
 			if(monto>5000){
 				if(!mejores.Contiene(vendedor)){
-					this.agregar(vendedor);
+					this.mejores.Agregar(vendedor);
 				}
 				vendedor.aumentaBonus();
 			}
@@ -43,8 +43,8 @@ namespace proyectoMetodologiasProgramacion1
 		
 		#region Observador implementation
 		public void actualizar(Observable o)
-		{
-			throw new NotImplementedException();
+		{	
+			this.venta(((Vendedor)o).UltimaVenta,((Vendedor)o));
 		}
 		#endregion
 	}

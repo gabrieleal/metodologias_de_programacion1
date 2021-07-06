@@ -7,19 +7,24 @@
  * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
  */
 using System;
+using System.Runtime.CompilerServices;
+using proyectoMetodologiasProgramacion1.Interface;
 
 namespace proyectoMetodologiasProgramacion1
 {
 	/// <summary>
 	/// Description of Alumno.
 	/// </summary>
+	
 	public enum estrategia{Nombre,Legajo,Promedio,Dni};
-	public class Alumno:Persona
+	
+	public class Alumno:Persona,ICalificacionDecorator
 	{
 		
 		private int Legajo;
 		private double Promedio;
 		private Estrategia Compara;
+		double calificacion;
 		
 		public Alumno(string n, int dni, int legajo,double prom,Estrategia Compara):base(n,dni)
 		{
@@ -54,6 +59,33 @@ namespace proyectoMetodologiasProgramacion1
 					this.Compara=new CompararPorDni();
 				}
 			}
+		}
+		
+		public virtual int responderPregunta(int pregunta){
+			return pregunta % new Random().Next(1,3);
+		}
+		
+		#region ICalificacionDecorator implementation
+		public string mostrarCalificacion(){
+			return String.Format("{0} - Calificacion : {1} ",this.getNombre(),this.calificacion);
+		}
+
+		public double mostrarNota()
+		{
+			return this.Calificacion();
+		}
+		public int mostrarLegajo()
+		{
+			return this.getLegajo();
+		}
+		
+		
+		#endregion
+		public double Calificacion() {
+				return calificacion;
+		}
+		public void Calificacion(double value) {
+			calificacion = value;
 		}
 		
 		new public bool sosMenor(IComparable c)

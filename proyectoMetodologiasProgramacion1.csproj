@@ -48,6 +48,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\AdapterStudent.cs" />
+    <Compile Include="Classes\AlumnoMuyEstudioso.cs" />
+    <Compile Include="Classes\DecoratorAbstract.cs" />
+    <Compile Include="Classes\DecoratorDescripcion.cs" />
+    <Compile Include="Classes\DecoratorLetras.cs" />
+    <Compile Include="Classes\DecoratorRecuadro.cs" />
     <Compile Include="Classes\FactoryMethod\Colecciones\FabricaColeccionMultiple.cs" />
     <Compile Include="Classes\FactoryMethod\Colecciones\FabricaConjunto.cs" />
     <Compile Include="Classes\FactoryMethod\Colecciones\FabricaDiccionario.cs" />
@@ -74,15 +80,19 @@
     <Compile Include="Classes\GenerarDatosAleatorio.cs" />
     <Compile Include="Classes\Gerente.cs" />
     <Compile Include="Classes\LectordeDatos.cs" />
+    <Compile Include="Classes\DecoratorLegajo.cs" />
     <Compile Include="Classes\Numero.cs" />
     <Compile Include="Classes\Persona.cs" />
+    <Compile Include="Classes\teacher.cs" />
     <Compile Include="Classes\Vendedor.cs" />
     <Compile Include="Interface\Estrategia.cs" />
+    <Compile Include="Interface\ICalificacionDecorator.cs" />
     <Compile Include="Interface\IColeccionable.cs" />
     <Compile Include="Interface\IComparable.cs" />
     <Compile Include="Interface\IDiccionario.cs" />
     <Compile Include="Interface\IFabriecadeComparables.cs" />
     <Compile Include="Interface\IList.cs" />
+    <Compile Include="Interface\IStudents.cs" />
     <Compile Include="Interface\Iterable.cs" />
     <Compile Include="Interface\Iterador.cs" />
     <Compile Include="Interface\Observable.cs" />

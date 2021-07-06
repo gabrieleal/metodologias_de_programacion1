@@ -26,7 +26,7 @@ namespace proyectoMetodologiasProgramacion1
 			string nombre = generador.stringAleatorio(rand.Next(3,15));
 			int dni =generador.numeroAleatorio(rand.Next(10000000,Convert.ToInt32(Math.Pow(10,9))));
 			int legajo =generador.numeroAleatorio(rand.Next(4,8));
-			double promedio =Convert.ToDouble(generador.numeroAleatorio(rand.Next(0,10)));
+			double promedio =Convert.ToDouble(generador.numeroAleatorio(rand.Next(1,10)));
 			return new Alumno(nombre,dni,legajo,promedio,new CompararPorDni());
 		}
 //		override public IComparable fabricaIComparable(IComparableDeseado deseado){

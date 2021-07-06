@@ -16,7 +16,8 @@ namespace proyectoMetodologiasProgramacion1
 	/// </summary>
 	public class Vendedor : Persona, Observable
 	{	
-		private int sueldoBase;double bonus=1;
+		private int sueldoBase,ultimaVenta; 
+		private double bonus=1;
 		
 		private List<Observador> observadores;
 		
@@ -28,6 +29,9 @@ namespace proyectoMetodologiasProgramacion1
 		
 		public void venta(int monto){
 			Console.WriteLine("venta: "+monto);
+			this.ultimaVenta=monto;
+			this.notificar();
+			
 		}
 		
 		public void aumentaBonus(){
@@ -40,6 +44,11 @@ namespace proyectoMetodologiasProgramacion1
 			}
 		}
 
+		public int UltimaVenta {
+			get {
+				return ultimaVenta;
+			}
+		}
 		public int SueldoBase {
 			get {
 				return sueldoBase;
@@ -60,14 +69,7 @@ namespace proyectoMetodologiasProgramacion1
 		}
 		public void quitar(Observador v)
 		{
-			iterador it = observadores.crearIterador();
-			
-			if(!it.Fin()){
-				if(((Observador)it.Actual()).Equals(v)){
-					(Observador)it.Actual()=null;
-				}
-				it.Siguiente();
-			}
+			observadores.Remove(v);
 		}
 		#endregion
 	}
