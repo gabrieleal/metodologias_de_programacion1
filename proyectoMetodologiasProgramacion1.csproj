@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Classes\AdapterStudent.cs" />
     <Compile Include="Classes\AlumnoMuyEstudioso.cs" />
+    <Compile Include="Classes\Aula.cs" />
     <Compile Include="Classes\DecoratorAbstract.cs" />
     <Compile Include="Classes\DecoratorDescripcion.cs" />
     <Compile Include="Classes\DecoratorLetras.cs" />
@@ -83,6 +84,9 @@
     <Compile Include="Classes\LectordeDatos.cs" />
     <Compile Include="Classes\DecoratorLegajo.cs" />
     <Compile Include="Classes\Numero.cs" />
+    <Compile Include="Classes\OrdenAulaLLena.cs" />
+    <Compile Include="Classes\OrdenInicio.cs" />
+    <Compile Include="Classes\OrdenLlegaAlumno.cs" />
     <Compile Include="Classes\Persona.cs" />
     <Compile Include="Classes\ProxyAlumno.cs" />
     <Compile Include="Classes\teacher.cs" />
@@ -95,6 +99,8 @@
     <Compile Include="Interface\IDiccionario.cs" />
     <Compile Include="Interface\IFabriecadeComparables.cs" />
     <Compile Include="Interface\IList.cs" />
+    <Compile Include="Interface\IOrdenEnAula1.cs" />
+    <Compile Include="Interface\IOrdenEnAula2.cs" />
     <Compile Include="Interface\IStudents.cs" />
     <Compile Include="Interface\Iterable.cs" />
     <Compile Include="Interface\Iterador.cs" />
