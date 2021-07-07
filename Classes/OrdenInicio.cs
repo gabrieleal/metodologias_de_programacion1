@@ -16,7 +16,7 @@ namespace proyectoMetodologiasProgramacion1.Classes
 	/// </summary>
 	public class OrdenInicio:IOrdenEnAula1
 	{	
-		Teacher t;
+		Aula t;
 
 		
 		
@@ -28,14 +28,14 @@ namespace proyectoMetodologiasProgramacion1.Classes
 
 		public void ejecutar()
 		{
-			this.t=new Teacher();
+			this.t.comenzar();
 		}
 
 		#endregion
 		
 		
 		
-		public Teacher T {
+		public Aula T {
 			get {
 				return t;
 			}

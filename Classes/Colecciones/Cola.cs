@@ -9,15 +9,19 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using proyectoMetodologiasProgramacion1.Interface;
 
 namespace proyectoMetodologiasProgramacion1
 {
 	/// <summary>
 	/// Description of Cola.
 	/// </summary>
-	public class Cola:IColeccionable,Iterable
+	public class Cola:IColeccionable,Iterable,IOrdenable
 	{
 		private List<IComparable> cola;
+		
+		IOrdenEnAula2 orden;
+		IOrdenEnAula1 orden1,orden2;
 		
 		public Cola()
 		{
@@ -102,7 +106,15 @@ namespace proyectoMetodologiasProgramacion1
 
 		public void Agregar(IComparable c)
 		{ 
+			
 			this.push(c);
+			
+			if(cola.Count==1) this.orden1.ejecutar();
+			
+			this.orden.ejecutar(c);
+			
+			if(cola.Count == 40) this.orden2.ejecutar();
+			
 		}
 
 		public bool Contiene(IComparable c)
@@ -113,6 +125,25 @@ namespace proyectoMetodologiasProgramacion1
 				}
 			}
 			return false;
+		}
+
+		#endregion
+
+		#region IOrdenable implementation
+
+		public void setOrdenInicio(IOrdenEnAula1 o)
+		{
+			this.orden1 = o;
+		}
+
+		public void setOrdenLlegaAlumno(IOrdenEnAula2 o)
+		{
+			this.orden=o;
+		}
+
+		public void setOrdenAulaLlena(IOrdenEnAula1 o)
+		{
+			this.orden2 = o;
 		}
 
 		#endregion

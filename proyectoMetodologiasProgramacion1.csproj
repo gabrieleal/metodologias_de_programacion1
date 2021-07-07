@@ -99,6 +99,7 @@
     <Compile Include="Interface\IDiccionario.cs" />
     <Compile Include="Interface\IFabriecadeComparables.cs" />
     <Compile Include="Interface\IList.cs" />
+    <Compile Include="Interface\IOrdenable.cs" />
     <Compile Include="Interface\IOrdenEnAula1.cs" />
     <Compile Include="Interface\IOrdenEnAula2.cs" />
     <Compile Include="Interface\IStudents.cs" />

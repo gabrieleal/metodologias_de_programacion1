@@ -18,52 +18,23 @@ namespace proyectoMetodologiasProgramacion1.Classes
 	public class Aula
 	{	
 		Teacher t;
-		IOrdenEnAula1 push;
-		IOrdenEnAula1 com;
-		List<IOrdenEnAula2> pop;
+		
 		public Aula()
 		{
 		}
 		
 		public void comenzar(){
 			Console.WriteLine("Cominzan las clases");
-			if(push!=null){
-				push.ejecutar();
-			}
+			this.t=new Teacher();
 		}
 		
 		public void nuevoAlumno(IAlumno a){
-			foreach(var i in pop){
-				i.ejecutar(a);
-			}
+			Student newStudent = new AdapterStudent(a);
+			t.goToClass(newStudent);
 		}
 		
 		public void claseLista(){
-			if(com!=null){
-				com.ejecutar();
-			}
-		}
-		
-		public void addPush(IOrdenEnAula1 o){
-			push=(o);
-			((OrdenInicio)push).T=this.t;
-		}
-		public void addCom(IOrdenEnAula1 o){
-			Com=(o);
-			((OrdenLlegaAlumno)Com).T=this.t;
-		}
-		public void addPop(IOrdenEnAula2 o){
-			((OrdenLlegaAlumno)o).T=this.t;	
-			pop.Add(o);
-		}
-		
-		public IOrdenEnAula1 Com {
-			get {
-				return com;
-			}
-			set {
-				com = value;
-			}
+			t.teachingAClass();
 		}
 	}
 }

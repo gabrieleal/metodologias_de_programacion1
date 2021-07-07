@@ -16,7 +16,7 @@ namespace proyectoMetodologiasProgramacion1.Classes
 	/// </summary>
 	public class OrdenLlegaAlumno:IOrdenEnAula2
 	{	
-		Teacher t;
+		Aula t;
 		
 		public OrdenLlegaAlumno()
 		{
@@ -26,12 +26,12 @@ namespace proyectoMetodologiasProgramacion1.Classes
 
 		public void ejecutar(IComparable c)
 		{
-			this.t.goToClass(new AdapterStudent(((IAlumno)c)));
+			this.t.nuevoAlumno((IAlumno)c);
 		}
 
 		#endregion
 
-		public Teacher T {
+		public Aula T {
 			get {
 				return t;
 			}
