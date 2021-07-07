@@ -9,6 +9,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using proyectoMetodologiasProgramacion1.Interface;
 
 namespace proyectoMetodologiasProgramacion1
 {
@@ -16,7 +17,10 @@ namespace proyectoMetodologiasProgramacion1
 	/// Description of Pila.
 	/// </summary>
 	public class Pila : IColeccionable, Iterable
-	{	private List<IComparable> lista;
+	{	
+		private List<IComparable> lista;
+		IOrdenEnAula2 orden;
+		IOrdenEnAula1 orden1,orden2;
 		
 		public Pila()
 		{
@@ -34,6 +38,13 @@ namespace proyectoMetodologiasProgramacion1
 		#endregion		
 		public void push(IComparable elemento){
 			lista.Add(elemento);
+			
+			if(this.lista.Count==1 && this.orden1 != null) this.orden1.ejecutar();
+			
+			if(this.orden != null) this.orden.ejecutar(elemento);
+			
+			if(this.lista.Count == 40 && this.orden2 != null) this.orden2.ejecutar();
+		
 		}
 		
 		public IComparable pop(){
@@ -121,6 +132,26 @@ namespace proyectoMetodologiasProgramacion1
 
 
 		#endregion
+		
 
+		#region IOrdenable implementation
+
+		public void setOrdenInicio(IOrdenEnAula1 o)
+		{
+			this.orden1 = o;
+		}
+
+		public void setOrdenLlegaAlumno(IOrdenEnAula2 o)
+		{
+			this.orden=o;
+		}
+
+		public void setOrdenAulaLlena(IOrdenEnAula1 o)
+		{
+			this.orden2 = o;
+		}
+
+		#endregion
+		
 	}
 }

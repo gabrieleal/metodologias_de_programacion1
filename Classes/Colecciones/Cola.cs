@@ -109,11 +109,11 @@ namespace proyectoMetodologiasProgramacion1
 			
 			this.push(c);
 			
-			if(cola.Count==1) this.orden1.ejecutar();
+			if(cola.Count==1 && this.orden1 != null) this.orden1.ejecutar();
 			
-			this.orden.ejecutar(c);
+			if(this.orden != null) this.orden.ejecutar(c);
 			
-			if(cola.Count == 40) this.orden2.ejecutar();
+			if(cola.Count == 40 && this.orden2 != null) this.orden2.ejecutar();
 			
 		}
 

@@ -36,6 +36,17 @@ namespace proyectoMetodologiasProgramacion1
 			Console.ReadKey(true);
 		}
 		
+		
+		static void Ejercicio10_Practica5(){
+			
+			Cola c = new Cola();
+			
+			
+		}
+		
+		
+		
+		
 		static void Ejercicio4_Practica4(){
 			Teacher prof = new Teacher();
 			GenerarDatosAleatorio datos = new GenerarDatosAleatorio();

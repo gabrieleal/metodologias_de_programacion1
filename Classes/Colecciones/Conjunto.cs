@@ -8,15 +8,21 @@
  */
 using System;
 using System.Collections.Generic;
+using proyectoMetodologiasProgramacion1.Interface;
 
 namespace proyectoMetodologiasProgramacion1
 {
 	/// <summary>
 	/// Description of Conjunto.
 	/// </summary>
-	public class Conjunto : IColeccionable
+	public class Conjunto : IColeccionable,IOrdenable
 	{	
 		private List<IComparable> lista = new List<IComparable>();
+		
+		
+		IOrdenEnAula2 orden;
+		IOrdenEnAula1 orden1,orden2;
+		
 		
 		public Conjunto()
 		{
@@ -27,6 +33,13 @@ namespace proyectoMetodologiasProgramacion1
 				return;
 			}
 			this.lista.Add(elemento);
+			
+			if(this.lista.Count==1 && this.orden1 != null) this.orden1.ejecutar();
+			
+			if(this.orden != null) this.orden.ejecutar(elemento);
+			
+			if(this.lista.Count == 40 && this.orden2 != null) this.orden2.ejecutar();
+			
 		}
 		
 		public bool Pertenece(IComparable elemento){
@@ -72,6 +85,25 @@ namespace proyectoMetodologiasProgramacion1
 		{	
 			return this.Pertenece(c);
 		}
+		#endregion
+		
+		#region IOrdenable implementation
+
+		public void setOrdenInicio(IOrdenEnAula1 o)
+		{
+			this.orden1 = o;
+		}
+
+		public void setOrdenLlegaAlumno(IOrdenEnAula2 o)
+		{
+			this.orden=o;
+		}
+
+		public void setOrdenAulaLlena(IOrdenEnAula1 o)
+		{
+			this.orden2 = o;
+		}
+
 		#endregion
 	}
 }

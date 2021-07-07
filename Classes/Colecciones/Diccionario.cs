@@ -8,15 +8,18 @@
  */
 using System;
 using System.Collections.Generic;
+using proyectoMetodologiasProgramacion1.Interface;
 
 namespace proyectoMetodologiasProgramacion1
 {
 	/// <summary>
 	/// Description of Diccionario.
 	/// </summary>
-	public class Diccionario:IColeccionable,Iterable,IDiccionario<ClaveValor>
+	public class Diccionario:IColeccionable,Iterable,IDiccionario<ClaveValor>,IOrdenable
 	{	
 		List<ClaveValor> dicc = new List<ClaveValor>();	
+		IOrdenEnAula2 orden;
+		IOrdenEnAula1 orden1,orden2;
 		
 		public Diccionario()
 		{
@@ -40,7 +43,16 @@ namespace proyectoMetodologiasProgramacion1
 		#endregion
 
 		public void agregar(IComparable clave, Object valor){
-			this.dicc.Add(new ClaveValor(valor,clave));
+			
+			ClaveValor newClaveValor = new ClaveValor(valor,clave);
+			
+			this.dicc.Add(newClaveValor);
+			
+			if(this.dicc.Count==1 && this.orden1 != null) this.orden1.ejecutar();
+			
+			if(this.orden != null) this.orden.ejecutar((IComparable)newClaveValor.Valor);
+			
+			if(this.dicc.Count == 40 && this.orden2 != null) this.orden2.ejecutar();
 		}
 		
 		public Object valorDe(IComparable clave){
@@ -102,6 +114,27 @@ namespace proyectoMetodologiasProgramacion1
 			}
 			return false;
 		}
+		#endregion
+		
+
+
+		#region IOrdenable implementation
+
+		public void setOrdenInicio(IOrdenEnAula1 o)
+		{
+			this.orden1 = o;
+		}
+
+		public void setOrdenLlegaAlumno(IOrdenEnAula2 o)
+		{
+			this.orden=o;
+		}
+
+		public void setOrdenAulaLlena(IOrdenEnAula1 o)
+		{
+			this.orden2 = o;
+		}
+
 		#endregion
 	}
 }
