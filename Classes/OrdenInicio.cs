@@ -15,13 +15,14 @@ namespace proyectoMetodologiasProgramacion1.Classes
 	/// Description of OrdenInicio.
 	/// </summary>
 	public class OrdenInicio:IOrdenEnAula1
-	{	
+	{
 		Aula t;
 
 		
 		
-		public OrdenInicio()
-		{
+		public OrdenInicio(Aula a)
+		{			
+			this.t = a;
 		}
 
 		#region IOrdenEnAula1 implementation

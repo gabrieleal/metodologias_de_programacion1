@@ -29,8 +29,9 @@ namespace proyectoMetodologiasProgramacion1
 //			probarStrategy();
 //			probarIteradorDicc();
 			
-			Ejercicio4_Practica4();
-
+//			Ejercicio4_Practica4();
+			
+			Ejercicio10_Practica5();
 			
 			
 			Console.ReadKey(true);
@@ -39,8 +40,16 @@ namespace proyectoMetodologiasProgramacion1
 		
 		static void Ejercicio10_Practica5(){
 			
-			Cola c = new Cola();
+			Pila pila = new Pila();
 			
+			Aula aula = new Aula();
+			
+			pila.setOrdenInicio(new OrdenInicio(aula));
+			pila.setOrdenLlegaAlumno(new OrdenLlegaAlumno(aula));
+			pila.setOrdenAulaLlena(new OrdenAulaLLena(aula));
+			
+			llenar(pila,IComparableDeseado.Alumno);
+			llenar(pila,IComparableDeseado.AlumnoMuyEstudioso);
 			
 		}
 		

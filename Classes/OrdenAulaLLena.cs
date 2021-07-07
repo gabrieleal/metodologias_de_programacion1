@@ -19,8 +19,9 @@ namespace proyectoMetodologiasProgramacion1.Classes
 		Aula t;
 
 		
-		public OrdenAulaLLena()
+		public OrdenAulaLLena(Aula a)
 		{
+			this.t = a;
 		}
 
 		#region IOrdenEnAula1 implementation

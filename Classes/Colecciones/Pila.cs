@@ -39,11 +39,14 @@ namespace proyectoMetodologiasProgramacion1
 		public void push(IComparable elemento){
 			lista.Add(elemento);
 			
-			if(this.lista.Count==1 && this.orden1 != null) this.orden1.ejecutar();
+			if(this.lista.Count==1 && this.orden1 != null) 
+				this.orden1.ejecutar();
 			
-			if(this.orden != null) this.orden.ejecutar(elemento);
+			if(this.orden != null) 
+				this.orden.ejecutar(elemento);
 			
-			if(this.lista.Count == 40 && this.orden2 != null) this.orden2.ejecutar();
+			if(this.lista.Count == 40 && this.orden2 != null) 
+				this.orden2.ejecutar();
 		
 		}
 		
