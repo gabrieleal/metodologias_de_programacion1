@@ -67,6 +67,7 @@ namespace proyectoMetodologiasProgramacion1
 						AdapterStudent student = new AdapterStudent(alumno);
 						prof.goToClass(student);
 					}else{
+						
 						//AdapterStudent student = new AdapterStudent(new AlumnoMuyEstudioso(datos.stringAleatorio(rand.Next(2,10)),datos.numeroAleatorio(rand.Next(9,11)),datos.numeroAleatorio(rand.Next(4,6)),Convert.ToDouble(datos.numeroAleatorio(rand.Next(1,10)))));
 						IAlumno alumno = new ProxyAlumno(datos.stringAleatorio(rand.Next(2,10)),datos.numeroAleatorio(rand.Next(9,11)),datos.numeroAleatorio(rand.Next(4,6)),datos.numeroAleatorio(rand.Next(1,10)),IComparableDeseado.AlumnoMuyEstudioso);
 						AdapterStudent student = new AdapterStudent(alumno);
